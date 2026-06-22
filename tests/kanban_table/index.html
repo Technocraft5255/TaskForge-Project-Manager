@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        class KanbanTable {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.columns = [];
+            }
+
+            addColumn(column) {
+                this.columns.push(column);
+            }
+
+            render() {
+                const columnWidth = this.canvas.width / this.columns.length;
+                this.columns.forEach((column, index) => {
+                    const x = index * columnWidth;
+                    this.ctx.fillStyle = '#f0f0f0';
+                    this.ctx.fillRect(x, 0, columnWidth, this.canvas.height);
+                    column.cards.forEach((card, cardIndex) => {
+                        const y = cardIndex * 50 + 10;
+                        this.ctx.fillStyle = '#fff';
+                        this.ctx.fillRect(x + 10, y, columnWidth - 20, 40);
+                        this.ctx.fillStyle = '#000';
+                        this.ctx.fillText(card.title, x + 20, y + 25);
+                    });
+                });
+            }
+        }
+
+        const canvas = document.getElementById('canvas');
+        const kanbanTable = new KanbanTable(canvas);
+        kanbanTable.addColumn({ cards: [{ title: 'Card 1' }, { title: 'Card 2' }] });
+        kanbanTable.addColumn({ cards: [{ title: 'Card 3' }, { title: 'Card 4' }] });
+        kanbanTable.render();
+
+    </script>
+</body>
+</html>

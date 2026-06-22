@@ -1,0 +1,138 @@
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('../../assets/kanban-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px) brightness(0.6) ;
+}
+
+.input_container {
+    width: 100%;
+    padding-left: 20px;
+    margin: 10px;
+    border: 1px solid rgba(14, 13, 13, 0.5);
+    border-radius: 15px;
+    background-color: rgba(14, 13, 13, 0.5);
+    display: flex;
+    align-items: center;
+}
+.input_container i {
+    color: #b1b1b1ab;
+    margin-right: 10px;
+}
+
+.input_container:active, .input_container:focus-within {
+    border-color: #325ff0;
+}
+
+.input_container input {
+    border: none;
+    background: transparent;
+    color: #f0f0f0;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    padding-left:5px;
+}
+.input_container input:active, .input_container input:focus {
+    border: none;
+    outline: none;
+
+}
+.login_form p {
+    margin-bottom: 0px;
+    font-size: 20px;
+    color: #f0f0f0;
+    align-self: flex-start;
+}
+
+.login_form {
+    backdrop-filter: blur(50px);
+    background-color: rgba(58, 58, 58, 0.3);
+    padding: 40px;
+    border-radius: 35px;
+    border: 1px solid #b1b1b1ab;
+    width: 350px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-70px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login_form h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #f0f0f0;
+}
+
+.login_form button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px 0px;
+    border-radius: 15px;
+    border: none;
+    background: rgba(58, 191, 232, 1);
+    background-image: linear-gradient(90deg,rgba(50, 95, 240, 1) 0%,  rgba(255,255,255,0) 100%);
+    color: #f0f0f0;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.login_form button:hover {
+    background-color: #325FF0;
+}
+.login_form button:active {
+    background-color: #1e3490;
+}
+.login_form button i {
+    margin-left: 10px;
+}
+.login_form a {
+    color: #24afff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
